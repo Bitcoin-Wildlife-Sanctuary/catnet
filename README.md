@@ -1,6 +1,6 @@
 # Catnet 🐺-😺
 
-Catnet is a custom Bitcoin signet with OP_CAT enabled, used to test implementation of Bitcoin Circle STARK Verifier.
+Catnet is a custom Bitcoin signet with OP_CAT enabled, used to test implementation of [Bitcoin Circle STARK Verifier](https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark).
 
 ## Resources
 
