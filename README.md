@@ -15,13 +15,13 @@ Notably, we will use Catnet to test the implementation of a [Bitcoin Circle STAR
 
 Catnet is built based on [Bitcoin Inquisition fork](https://github.com/bitcoin-inquisition/bitcoin), [v27.0](https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq). Bitcoin Inquisistion includes activation of BIP 118 (ANYPREVOUT), BIP 119 (CHECKTEMPLATEVERIFY), and BIN-24-1 (BIP 347, OP_CAT). It also includes a new 'evalscript' subcommand for bitcoin-util that can be used to test script opcode behaviour.
 
-## Prerequisites
+### Prerequisites
 
 - Basic command-line interface skills
 - Administrative permissions on your machine
 - An internet connection
 
-## Step 1: Download and Install Bitcoin Core
+### Step 1: Download and Install Bitcoin Core
 
 First, you need to download the appropriate Bitcoin Core binaries for your system. Below are links for commonly used systems:
 
@@ -40,7 +40,7 @@ Navigate to the extracted directory:
 cd bitcoin-27.0-inq/bin
 ```
 
-## Step 2: Configuration
+### Step 2: Configuration
 
 Before starting your node, you need to create a configuration file to properly join the Catnet Signet.
 
@@ -83,7 +83,7 @@ Before starting your node, you need to create a configuration file to properly j
 
     Save and close the file. Replace `rpcuser` and `rpcpassword` with your desired credentials.
 
-## Step 3: Start Your Node
+### Step 3: Start Your Node
 
 Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
 
@@ -93,7 +93,7 @@ Run the following command in the terminal from the `bin` directory of your Bitco
 
 This command will start your Bitcoin node and connect it to the Catnet Signet.
 
-## Step 4: Verifying the Connection
+### Step 4: Verifying the Connection
 
 After your node starts, you can verify it's properly connecting to the network by checking the peer information:
 
@@ -103,7 +103,7 @@ After your node starts, you can verify it's properly connecting to the network b
 
 You should see the Catnet node `35.192.139.170` listed among the peers.
 
-## Conclusion
+### Conclusion
 
 You are now connected to the Catnet custom Signet! This environment allows you to test applications with Bitcoin’s OP_CAT enabled without risking real assets or impacting the main Bitcoin network.
 
