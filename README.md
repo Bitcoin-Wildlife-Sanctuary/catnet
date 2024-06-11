@@ -77,8 +77,8 @@ Before starting your node, you need to create a configuration file to properly j
     rpcbind=127.0.0.1
     rpcallowip=127.0.0.0/8
     rpcport=38332
-    rpcuser=
-    rpcpassword=
+    rpcuser=XXX
+    rpcpassword=XXX
     ```
 
     Save and close the file. Replace `rpcuser` and `rpcpassword` with your desired credentials.
@@ -98,10 +98,30 @@ This command will start your Bitcoin node and connect it to the Catnet Signet.
 After your node starts, you can verify it's properly connecting to the network by checking the peer information:
 
 ```bash
-./bitcoin-cli -rpcport=38332 -rpcuser= -rpcpassword= getpeerinfo
+./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX getpeerinfo
 ```
 
 You should see the Catnet node `35.192.139.170` listed among the peers.
+
+### Step 5: Create a Wallet
+
+You can create a new wallet to interact with the Catnet Signet using the following command:
+
+```bash
+./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX -named createwallet wallet_name="test" descriptors=false
+```
+
+### Step 6: Generate a New Address
+
+You can generate a new address to receive funds on the Catnet Signet:
+
+```bash
+./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX getnewaddress
+```
+
+### Step 7: Claim some coins from the faucet
+
+You can claim some coins from the faucet by visiting the [Catnet faucet](https://catnet-faucet.btcwild.life/) and submitting your address and the captcha.
 
 ### Conclusion
 
