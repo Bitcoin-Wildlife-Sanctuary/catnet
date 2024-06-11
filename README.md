@@ -85,6 +85,7 @@ Before starting your node, you need to create a configuration file to properly j
 
 ### Step 3: Start Your Node
 
+Using `bitcoind`:
 Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
 
 ```bash
@@ -92,6 +93,18 @@ Run the following command in the terminal from the `bin` directory of your Bitco
 ```
 
 This command will start your Bitcoin node and connect it to the Catnet Signet.
+
+OR
+
+Using `bitcoin-qt`: Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
+
+```bash
+./bitcoin-qt -datadir=~/.bitcoin/catnet
+```
+
+Screenshot example:
+
+![bitcoin-qt](./docs/resources/img/bitcoin-qt-example.png)
 
 ### Step 4: Verifying the Connection
 
