@@ -23,10 +23,17 @@ Catnet is built based on [Bitcoin Inquisition fork](https://github.com/bitcoin-i
 
 ### Step 1: Download and Install Bitcoin Core
 
+You have two options to download and install Bitcoin Core:
+
+- **Download the pre-built binaries**: You can download the pre-built binaries from the Bitcoin Inquisition release and use them directly.
+- **Build from source**: You can build Bitcoin Inquisition from source code ([this release](https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq)).
+
 First, you need to download the appropriate Bitcoin Core binaries for your system. Below are links for commonly used systems:
 
 - **Linux (aarch64)**: [Download v27.0 for aarch64](https://github.com/bitcoin-inquisition/bitcoin/releases/download/v27.0-inq/bitcoin-27.0-inq-aarch64-linux-gnu.tar.gz)
 - **macOS (arm64)**: [Download v27.0 for arm64](https://github.com/bitcoin-inquisition/bitcoin/releases/download/v27.0-inq/bitcoin-27.0-inq-arm64-apple-darwin.tar.gz)
+
+You can find links for other systems [here](https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq).
 
 After downloading the tar.gz file for your system, extract it using the following command:
 
