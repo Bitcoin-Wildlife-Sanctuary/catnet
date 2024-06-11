@@ -2,6 +2,8 @@
 
 Catnet is a [custom Bitcoin signet](https://en.bitcoin.it/wiki/Signet#Custom_Signet) with OP_CAT enabled, used to test implementation of [Bitcoin Circle STARK Verifier](https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark).
 
+Catnet signet magic is: `af34136e`.
+
 ## Resources
 
 - [Catnet block explorer](https://catnet-mempool.btcwild.life/)
