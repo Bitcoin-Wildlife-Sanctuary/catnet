@@ -5,7 +5,7 @@ Catnet is a custom Bitcoin signet with OP_CAT enabled, used to test implementati
 ## Resources
 
 - [Catnet block explorer](https://catnet-mempool.btcwild.life/)
-- [Catnet faucet (Coming soon)](https://catnet-faucet.btcwild.life/)
+- [Catnet faucet](https://catnet-faucet.btcwild.life/)
 
 ## Joining the Catnet Custom Signet
 
