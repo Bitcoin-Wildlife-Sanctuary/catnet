@@ -123,6 +123,10 @@ You can generate a new address to receive funds on the Catnet Signet:
 
 You can claim some coins from the faucet by visiting the [Catnet faucet](https://catnet-faucet.btcwild.life/) and submitting your address and the captcha.
 
+Screenshot example:
+
+![faucet](./docs/resources/img/catnet-faucet-example.png)
+
 ### Conclusion
 
 You are now connected to the Catnet custom Signet! This environment allows you to test applications with Bitcoin’s OP_CAT enabled without risking real assets or impacting the main Bitcoin network.
