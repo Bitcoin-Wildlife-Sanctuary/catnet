@@ -113,13 +113,15 @@ def finish_block(block, signet_solution, grind_cmd):
         block.nNonce = newhead.nNonce
         block.rehash()
 
+    # Add debug logging
     logging.info(f"Block version: {block.nVersion}")
-    logging.info(f"Previous block hash: {block.hashPrevBlock.hex()}")
-    logging.info(f"Merkle root: {block.hashMerkleRoot.hex()}")
+    logging.info(f"Previous block hash: {block.hashPrevBlock:064x}")  # Format as 64-character hex string
+    logging.info(f"Merkle root: {block.hashMerkleRoot:064x}")  # Format as 64-character hex string
     logging.info(f"Time: {block.nTime}")
-    logging.info(f"Bits: {block.nBits}")
+    logging.info(f"Bits: {block.nBits:08x}")  # Format as 8-character hex string
     logging.info(f"Nonce: {block.nNonce}")
     logging.info(f"Signet solution length: {len(signet_solution)}")
+    
     return block
 
 def generate_psbt(tmpl, reward_spk, *, blocktime=None, poolid=None):
