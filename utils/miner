@@ -19,7 +19,7 @@ PATH_BASE_TEST_FUNCTIONAL = os.path.abspath(os.path.join(PATH_BASE_CONTRIB_SIGNE
 sys.path.insert(0, PATH_BASE_TEST_FUNCTIONAL)
 
 from test_framework.blocktools import get_witness_script, script_BIP34_coinbase_height # noqa: E402
-from test_framework.messages import CBlock, CBlockHeader, COutPoint, CTransaction, CTxIn, CTxInWitness, CTxOut, from_binary, from_hex, ser_string, ser_uint256, tx_from_hex # noqa: E402
+from test_framework.messages import CBlock, CBlockHeader, COutPoint, CTransaction, CTxIn, CTxInWitness, CTxOut, from_binary, uint256_from_str, from_hex, ser_string, ser_uint256, tx_from_hex # noqa: E402
 from test_framework.psbt import PSBT, PSBTMap, PSBT_GLOBAL_UNSIGNED_TX, PSBT_IN_FINAL_SCRIPTSIG, PSBT_IN_FINAL_SCRIPTWITNESS, PSBT_IN_NON_WITNESS_UTXO, PSBT_IN_SIGHASH_TYPE # noqa: E402
 from test_framework.script import CScript, CScriptOp, OP_RETURN # noqa: E402
 
@@ -91,9 +91,11 @@ def finish_block(block, signet_solution, grind_cmd):
     witness_root = block.calc_witness_merkle_root()
     witness_nonce = b'\x00' * 32
 
-    # Convert witness_root to integer if it's in bytes format
+    # Ensure witness_root and witness_nonce are in the correct format
     if isinstance(witness_root, bytes):
-        witness_root = int.from_bytes(witness_root, 'little')
+        witness_root = uint256_from_str(witness_root)
+    if isinstance(witness_nonce, bytes):
+        witness_nonce = uint256_from_str(witness_nonce)
 
     witness_commitment = get_witness_script(witness_root, witness_nonce)
     witness_commitment_output = CTxOut(0, CScript([OP_RETURN, witness_commitment]))
