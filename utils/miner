@@ -90,9 +90,14 @@ def finish_block(block, signet_solution, grind_cmd):
     # Add witness commitment
     witness_root = block.calc_witness_merkle_root()
     witness_nonce = b'\x00' * 32
+
+    # Convert witness_root to integer if it's in bytes format
+    if isinstance(witness_root, bytes):
+        witness_root = int.from_bytes(witness_root, 'little')
+
     witness_commitment = get_witness_script(witness_root, witness_nonce)
-    witness_commitment_commitment = bytes([OP_RETURN, 0x24]) + witness_commitment
-    block.vtx[0].vout.append(CTxOut(0, CScript(witness_commitment_commitment)))
+    witness_commitment_output = CTxOut(0, CScript([OP_RETURN, witness_commitment]))
+    block.vtx[0].vout.append(witness_commitment_output)
 
     block.vtx[0].rehash()
     block.hashMerkleRoot = block.calc_merkle_root()
