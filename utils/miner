@@ -112,6 +112,14 @@ def finish_block(block, signet_solution, grind_cmd):
         newhead = from_hex(CBlockHeader(), newheadhex.decode('utf8'))
         block.nNonce = newhead.nNonce
         block.rehash()
+        
+    logging.debug(f"Block version: {block.nVersion}")
+    logging.debug(f"Previous block hash: {block.hashPrevBlock.hex()}")
+    logging.debug(f"Merkle root: {block.hashMerkleRoot.hex()}")
+    logging.debug(f"Time: {block.nTime}")
+    logging.debug(f"Bits: {block.nBits}")
+    logging.debug(f"Nonce: {block.nNonce}")
+    logging.debug(f"Signet solution length: {len(signet_solution)}")
     return block
 
 def generate_psbt(tmpl, reward_spk, *, blocktime=None, poolid=None):
